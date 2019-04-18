@@ -3,3 +3,6 @@ EXTRAFLAGS += -flto
 
 # requires patch: https://gist.github.com/fauxpark/010dcf5d6377c3a71ac98ce37414c6c4
 # APPLE_FN_ENABLE = yes
+
+# Nkey Rollover and Handheld Scientific's BT-500 adapter result in garbage.
+NKRO_ENABLE = no
