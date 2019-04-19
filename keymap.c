@@ -249,6 +249,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       clear_mods();
       clear_oneshot_mods();
       SEND_STRING("make KEYBOARD=" QMK_KEYBOARD);
+      /* currently the modifiers have no effect as invoked from a layer and despite checking upon release. */
       if ((temp_mod | temp_osm) & MOD_MASK_SHIFT) {
 #if (defined(__arm__) || defined(BOOTLOADER_DFU) || defined(BOOTLOADER_LUFA_DFU) || defined(BOOTLOADER_QMK_DFU))
         SEND_STRING(" dfu-util-wait");
