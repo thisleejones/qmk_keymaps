@@ -15,5 +15,16 @@ TOP_DIR:=qmk_firmware
 TARGET:=firmware
 # TARGET:=$(subst /,_,$(KEYBOARD))
 
+planck:
+	$(MAKE) KEYBOARD=planck/rev6 TARGET=planck_rev6-1.0.0.x dfu-util-wait
+
+preonic:
+	$(MAKE) KEYBOARD=preonic/rev3 TARGET=preonic_rev3-1.0.0.x dfu-util-wait
+
+release:
+	$(MAKE) clean
+	$(MAKE) KEYBOARD=planck/rev6 TARGET=planck_rev6-1.0.0.x
+	$(MAKE) KEYBOARD=preonic/rev3 TARGET=preonic_rev3-1.0.0.x
+
 # include the core building makefile from QMK
 include ${TOP_DIR}/build_keyboard.mk
