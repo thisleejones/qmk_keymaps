@@ -70,7 +70,7 @@ enum user_keycodes {
 
 /* Alt/Opt/Meta taps */
 #define AT_A    LALT_T(KC_A)
-#define AT_SCLN RALT_T(KC_S)
+#define AT_SCLN RALT_T(KC_SCLN)
 
 /* Control taps */
 #define CT_F    LCTL_T(KC_F)
