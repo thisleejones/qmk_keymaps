@@ -102,9 +102,6 @@ enum user_keycodes {
 /* MacOS Spotlight hotkey (typically remapped to Alfred). */
 #define KC_SPOT LGUI(KC_SPC)
 
-/* Toggle previous application on MacOS. */
-/* #define KC_APPS LGUI(KC_TAB) */
-
 /* See rules.mk for a URL to the patch required */
 #if !defined(APPLE_FN_ENABLE)
 /* no-op when Apple Fn key feature not enabled */
