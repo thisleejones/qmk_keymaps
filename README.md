@@ -1,4 +1,4 @@
-This repository contains the QMK firmware keymaps used with my OLKB Planck and Preonic programmable ortholinear keyboards (keys are aligned vertically and horizontally as opposed to staggered like typical keyboards).  There is nothing particularly clever or special about the keymaps and since most of my computer time is spent within MacOS and Spacemacs there are features specific to each. 
+This repository contains the ![QMK firmware](https://github.com/qmk/qmk_firmware) firmware keymaps used with my OLKB Planck and Preonic programmable ortholinear keyboards (keys are aligned vertically and horizontally as opposed to staggered like typical keyboards).  There is nothing particularly clever or special about the keymaps and since most of my computer time is spent within MacOS and Spacemacs there are features specific to each. 
 
 ![Lo-pro Planck with MT3 /dev/tty keycaps photo](/planck.jpeg)
 
