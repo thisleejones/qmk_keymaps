@@ -56,7 +56,6 @@ enum user_keycodes {
   CMD_TAB,
   TLD_SLS,
   APP_TOG,
-  EM_TOP,
 };
 
 #define LOWER MO(LOWER_LAYER)
@@ -112,20 +111,18 @@ enum user_keycodes {
 #define MOD_MASK_CTRL            (MOD_BIT(KC_LCTRL)  | MOD_BIT(KC_RCTRL))
 #define MOD_MASK_SHIFT           (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT))
 
-#define LCTL_E LCTL(KC_E)
+#define LCTL_E LCTL(KC_E) /* R2 */
 #define LCTL_Y LCTL(KC_Y)
 #define LCTL_U LCTL(KC_U)
 #define LCTL_I LCTL(KC_I)
 #define LCTL_O LCTL(KC_O)
+#define LCTL_A LCTL(KC_A) /* R3 */
 #define LCTL_D LCTL(KC_D)
 #define LCTL_F LCTL(KC_F)
-#define LCTL_B LCTL(KC_B)
-
-#define LGUI_X LGUI(KC_X)
+#define LGUI_X LGUI(KC_X) /* R4 */
 #define LGUI_C LGUI(KC_C)
 #define LGUI_V LGUI(KC_V)
-
-#define LSFT_G LSFT(KC_G)
+#define LCTL_B LCTL(KC_B)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [QWERTY_LAYER] = LAYOUT_wrapper(
@@ -163,8 +160,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NAV_LAYER] = LAYOUT_wrapper(
     R1(XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX)
     R2(_______, XXXXXXX, XXXXXXX, LCTL_E,  XXXXXXX, XXXXXXX, LCTL_Y,  LCTL_U,  LCTL_I,  LCTL_O,  XXXXXXX, APP_TOG)
-    R3(APP_TOG, EM_TOP,  XXXXXXX, LCTL_D,  LCTL_F,  XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, _______)
-    R4(_______, LSFT_G,  LGUI_X,  LGUI_C,  LGUI_V,  LCTL_B,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______)
+    R3(APP_TOG, LCTL_A,  XXXXXXX, LCTL_D,  LCTL_F,  XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, _______)
+    R4(_______, XXXXXXX, LGUI_X,  LGUI_C,  LGUI_V,  LCTL_B,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______)
     R5(_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______)
   ),
 
@@ -230,11 +227,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case TLD_SLS:
     if (record->event.pressed) {
       SEND_STRING("~/");
-    }
-    return false;
-  case EM_TOP:
-    if (record->event.pressed) {
-      SEND_STRING("gg");
     }
     return false;
   case KC_VERS:
