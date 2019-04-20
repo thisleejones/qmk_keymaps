@@ -152,14 +152,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [RAISE_LAYER] = LAYOUT_wrapper(
     R1(XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX)
     R2(_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD, XXXXXXX, KC_AMPR, KC_ASTR, KC_LCBR, KC_RCBR, KC_GRV)
-    R3(CMD_TAB, XXXXXXX, XXXXXXX, KC_LSFT, KC_LCTL, TLD_SLS, KC_UNDS, KC_DLR,  KC_PERC, KC_CIRC, KC_PIPE, _______)
+    R3(_______, XXXXXXX, XXXXXXX, KC_LSFT, KC_LCTL, TLD_SLS, KC_UNDS, KC_DLR,  KC_PERC, KC_CIRC, KC_PIPE, _______)
     R4(_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MHSH, XXXXXXX, KC_EXLM, KC_AT,   KC_HASH, KC_BSLS, _______)
     R5(_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______)
   ),
 
   [NAV_LAYER] = LAYOUT_wrapper(
     R1(XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX)
-    R2(_______, XXXXXXX, XXXXXXX, LCTL_E,  XXXXXXX, XXXXXXX, LCTL_Y,  LCTL_U,  LCTL_I,  LCTL_O,  XXXXXXX, APP_TOG)
+    R2(CMD_TAB, XXXXXXX, XXXXXXX, LCTL_E,  XXXXXXX, XXXXXXX, LCTL_Y,  LCTL_U,  LCTL_I,  LCTL_O,  XXXXXXX, APP_TOG)
     R3(APP_TOG, LCTL_A,  XXXXXXX, LCTL_D,  LCTL_F,  XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, _______)
     R4(_______, XXXXXXX, LGUI_X,  LGUI_C,  LGUI_V,  LCTL_B,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______)
     R5(_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______)
@@ -200,7 +200,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   case CMD_TAB:
     if (record->event.pressed) {
       if (!cmd_tab_pressed) {
-        /* We handle unregister when RAISE, acting as CMD, is released. */
+        /* We handle unregister when NAV_BSP, acting as CMD, is released. */
         register_code(KC_LGUI);
         cmd_tab_pressed = true;
       }
@@ -208,7 +208,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       unregister_code(KC_TAB);
     }
     return false;
-  case RAISE:
+  case NAV_BSP:
     if (!record->event.pressed && cmd_tab_pressed) {
         /* Stop acting as a held CMD key during layer invoked CMD+TAB. */
         unregister_code(KC_LGUI);
