@@ -217,13 +217,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
   case APP_TOG:
     if (record->event.pressed) {
-      /* Ensure single-press/toggle rather than holding/cycling on MacOS. */
-      register_code(KC_LGUI);
+      if (!cmd_tab_pressed) {
+        /* Ensure single-press/toggle rather than holding/cycling on MacOS. */
+        register_code(KC_LGUI);
+      }
       register_code(KC_TAB);
       unregister_code(KC_TAB);
-      unregister_code(KC_LGUI);
-      /* while on same layer if used together APP_TOG and CMD_TAB can leave this stale. */
-      cmd_tab_pressed = false;
+      if (!cmd_tab_pressed) {
+        /* Only unregister if not within an existing CMD_TAB. */
+        unregister_code(KC_LGUI);
+      }
     }
     return false;
   case TLD_SLS:
