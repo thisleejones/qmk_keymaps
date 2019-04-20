@@ -6,6 +6,7 @@ This repository contains the [QMK firmware](https://github.com/qmk/qmk_firmware)
 
 - use row number macros R1(...) to R5(...) to conditionally compile for both keyboards with the same keymap cleanly
 - adopts Jack's embedded style repository with QMK pinned as a submodule*
+- heavy use of home row modifiers to minimize pinky use
 - layer invoked CMD+TAB with cycling in the MacOS app switcher and single tap previous app toggle
 - navigation helpers for Evil (an extensible VI layer for Emacs emulating the main features of VIM) on the navigation layer
 - uses sensible mnemonics where possible
