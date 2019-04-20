@@ -217,14 +217,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
   case APP_TOG:
     if (record->event.pressed) {
-      if (!cmd_tab_pressed) {
-        /* Ensure single-press/toggle rather than holding/cycling on MacOS. */
-        register_code(KC_LGUI);
-      }
+      /* We need CMD regardless of whether we are participating in an existing CMD_TAB cycle. */
+      register_code(KC_LGUI);
       register_code(KC_TAB);
       unregister_code(KC_TAB);
       if (!cmd_tab_pressed) {
-        /* Only unregister if not within an existing CMD_TAB. */
+        /* Only unregister if not within an existing CMD_TAB cycle otherwise we'd terminate it. */
         unregister_code(KC_LGUI);
       }
     }
