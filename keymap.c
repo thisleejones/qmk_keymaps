@@ -222,6 +222,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       register_code(KC_TAB);
       unregister_code(KC_TAB);
       unregister_code(KC_LGUI);
+      /* while on same layer if used together APP_TOG and CMD_TAB can leave this stale. */
+      cmd_tab_pressed = false;
     }
     return false;
   case TLD_SLS:
