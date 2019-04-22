@@ -10,7 +10,7 @@ This repository contains the [QMK firmware](https://github.com/qmk/qmk_firmware)
 - layer invoked CMD+TAB with cycling in the MacOS app switcher and single tap previous app toggle
 - navigation helpers for Evil (an extensible VI layer for Emacs emulating the main features of VIM) on the navigation layer
 - uses sensible mnemonics where possible
-- provides a guest layer giving a WISYWIG keymap via ADJUST [G]uest.
+- provides a guest layer giving a WYSIWYG keymap via ADJUST [G]uest.
 
 &ast; not currently an issue as all required features are present and appear working but the paradigm breaks with more recent QMK commits due to Makefile changes.
 
