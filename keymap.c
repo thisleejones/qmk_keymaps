@@ -111,19 +111,6 @@ enum user_keycodes {
 #define MOD_MASK_CTRL            (MOD_BIT(KC_LCTRL)  | MOD_BIT(KC_RCTRL))
 #define MOD_MASK_SHIFT           (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT))
 
-#define LCTL_E LCTL(KC_E) /* R2 */
-#define LCTL_Y LCTL(KC_Y)
-#define LCTL_U LCTL(KC_U)
-#define LCTL_I LCTL(KC_I)
-#define LCTL_O LCTL(KC_O)
-#define LCTL_A LCTL(KC_A) /* R3 */
-#define LCTL_D LCTL(KC_D)
-#define LCTL_F LCTL(KC_F)
-#define LGUI_X LGUI(KC_X) /* R4 */
-#define LGUI_C LGUI(KC_C)
-#define LGUI_V LGUI(KC_V)
-#define LCTL_B LCTL(KC_B)
-
 /* Aliases for layout friendly mods */
 #define LC(kc) LCTL(KC_##kc)
 #define LS(kc) LSFT(KC_##kc)
