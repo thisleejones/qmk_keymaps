@@ -170,7 +170,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NAV_LAYER] = LAYOUT_wrapper(
     R1(XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX)
     R2(CMD_TAB, XXXXXXX, XXXXXXX, LC(E),   XXXXXXX, XXXXXXX, LC(Y),   LC(U),   LC(I),   LC(O),   XXXXXXX, APP_TOG)
-    R3(APP_TOG, LC(A),   XXXXXXX, LC(D),   LC(F),   XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, _______)
+    R3(APP_TOG, LC(A),   LG(S),   LC(D),   LC(F),   XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, _______)
     R4(_______, XXXXXXX, LG(X),   LG(C),   LG(V),   LC(B),   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______)
     R5(_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______)
   ),
