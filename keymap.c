@@ -15,7 +15,7 @@
  */
 
 #include QMK_KEYBOARD_H
-#include "version.h"
+#include "quantum/version.h"
 
 #if defined(KEYBOARD_planck)
 #define LAYOUT_wrapper(...) LAYOUT_planck_grid(__VA_ARGS__)
