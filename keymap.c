@@ -146,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LOWER_LAYER] = LAYOUT_wrapper(
     R1(XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX)
     R2(_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PLUS,    KC_7,    KC_8,    KC_9, KC_EQL , XXXXXXX)
-    R3(_______, XXXXXXX, XXXXXXX, KC_LSFT, KC_LCTL, XXXXXXX, KC_MINS,    KC_4,    KC_5,    KC_6, KC_ASTR, _______)
+    R3(_______, KC_LALT, XXXXXXX, KC_LSFT, KC_LCTL, XXXXXXX, KC_MINS,    KC_4,    KC_5,    KC_6, KC_ASTR, _______)
     R4(_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_1,    KC_2,    KC_3, KC_SLSH, _______)
     R5(_______, _______, _______, _______, _______, _______, KC_DEL,     KC_0, KC_COMM,  KC_DOT, _______, _______)
   ),
@@ -154,7 +154,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [RAISE_LAYER] = LAYOUT_wrapper(
     R1(XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX)
     R2(_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD, XXXXXXX, KC_AMPR, KC_ASTR, KC_LCBR, KC_RCBR, KC_GRV)
-    R3(_______, XXXXXXX, XXXXXXX, KC_LSFT, KC_LCTL, TLD_SLS, KC_UNDS, KC_DLR,  KC_PERC, KC_CIRC, KC_PIPE, _______)
+    R3(_______, KC_LALT, XXXXXXX, KC_LSFT, KC_LCTL, TLD_SLS, KC_UNDS, KC_DLR,  KC_PERC, KC_CIRC, KC_PIPE, _______)
     R4(_______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MHSH, XXXXXXX, KC_EXLM, KC_AT,   KC_HASH, KC_BSLS, _______)
     R5(_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______)
   ),
